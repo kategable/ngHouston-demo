@@ -1,12 +1,10 @@
 <app-header [total]="list.length"></app-header>
-
 <div class="content" role="main">
 
   <p>Please add to your cart</p>
 
   <app-list [list]="candies$ | async" (addEvent)="add($event)"> </app-list>
   <app-cart [list]="list" (removeEvent)="remove($event)"></app-cart>
-
 
 
   <svg id="clouds" alt="Gray Clouds Background" xmlns="http://www.w3.org/2000/svg" width="2611.084" height="485.677"
