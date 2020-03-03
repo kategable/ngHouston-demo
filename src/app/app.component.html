@@ -2,65 +2,11 @@
 
 <div class="content" role="main">
 
-
   <p>Please add to your cart</p>
- 
 
-  <div class="card-container">
-    <div class="card card-small" (click)="add('Sour patch')" tabindex="0">
-      <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-        <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" /></svg>
+  <app-list [list]="candies$ | async" (addEvent)="add($event)"> </app-list>
+  <app-cart [list]="list" (removeEvent)="remove($event)"></app-cart>
 
-      <span>Sour patch</span>
-    </div>
-
-    <div class="card card-small" (click)="add('Snikers')" tabindex="0">
-      <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-        <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" /></svg>
-
-      <span>Snikers</span>
-    </div>
-
-    <div class="card card-small" (click)="add('Twix')" tabindex="0">
-      <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-        <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" /></svg>
-
-      <span>Twix</span>
-    </div>
-
-    <div class="card card-small" (click)="add('Skittles')" tabindex="0">
-      <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-        <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" /></svg>
-
-      <span>Skittles</span>
-    </div>
-
-    <div class="card card-small" (click)="add('KitKat')" tabindex="0">
-      <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-        <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" /></svg>
-
-      <span>KitKat</span>
-    </div>
-
-    <div class="card card-small" (click)="add('Butterfinger')" tabindex="0">
-      <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-        <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" /></svg>
-
-      <span>Butterfinger</span>
-    </div>
-  </div>
-
-  <!-- Terminal -->
-  <div class="terminal">
-    <div *ngFor="let candy of list; let i = index" >
-      <pre (click)="remove(i)">{{i+1}}.{{candy}}</pre>
-
-    </div>
-  </div>
-
-
-
-  <!-- Footer -->
 
 
   <svg id="clouds" alt="Gray Clouds Background" xmlns="http://www.w3.org/2000/svg" width="2611.084" height="485.677"

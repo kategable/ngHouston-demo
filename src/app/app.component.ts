@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { of, Observable } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -7,6 +8,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'ngHouston-demo';
+  candies$: Observable<string[]> = of(['Sour patch','Snikers','Twix','Skittles','KitKat','Butterfinger']);
   list: string[] = [];
 
   add(candy:string){
