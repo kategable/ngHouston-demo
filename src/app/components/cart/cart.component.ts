@@ -1,9 +1,10 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.component.html',
-  styleUrls: ['./cart.component.scss']
+  styleUrls: ['./cart.component.scss'],
+  changeDetection : ChangeDetectionStrategy.OnPush
 })
 export class CartComponent implements OnInit {
   @Input() list: string[];
